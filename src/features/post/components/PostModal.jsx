@@ -4,10 +4,10 @@ import { useDispatch, useSelector } from "react-redux";
 // import { UserAvatar } from "../../../components/UserAvatar";
 // import { createPost, editPost } from "../postSlice";
 // import { focusInput } from "../../../utils/focusInput";
-// import { uploadImage } from "../../../utils/uploadImage";
+import { uploadImage } from "../../../utils/uploadImage";
 import toast from "react-hot-toast";
 import CloseRoundedIcon from "@mui/icons-material/CloseRounded";
-// import  {useClickOutside} from "../../../customHooks/useClickOutside"
+// import { useClickOutside } from "../../../customHooks/useClickOutside";
 import InsertPhotoIcon from "@mui/icons-material/InsertPhoto";
 import { createPost, editPost } from "../postSlice";
 import UserProfile from "../../../Components/UserProfile";
@@ -33,15 +33,15 @@ export const PostModal = ({ post, setShowNewPostModal, setShowOptions }) => {
 
     if (post) {
       if (image) {
-        // const resp = await uploadImage(image);
-        // dispatch(
-        //   editPost({
-        //     input: input?.content,
-        //     postImage: resp.url,
-        //     token,
-        //     post,
-        //   })
-        // );
+        const resp = await uploadImage(image);
+        dispatch(
+          editPost({
+            input: input?.content,
+            postImage: resp.url,
+            token,
+            post,
+          })
+        );
       } else {
         dispatch(
           editPost({
@@ -57,15 +57,15 @@ export const PostModal = ({ post, setShowNewPostModal, setShowOptions }) => {
       setShowOptions(false);
     } else {
       if (image) {
-        // const resp = await uploadImage(image);
-        // dispatch(
-        //   createPost({
-        //     input: input?.content,
-        //     postImage: resp.url,
-        //     token,
-        //     user,
-        //   })
-        // );
+        const resp = await uploadImage(image);
+        dispatch(
+          createPost({
+            input: input?.content,
+            postImage: resp.url,
+            token,
+            user,
+          })
+        );
       } else {
         dispatch(
           createPost({
@@ -117,12 +117,12 @@ export const PostModal = ({ post, setShowNewPostModal, setShowOptions }) => {
           }
         />
 
-        {/* {input?.postImage || image ? (
+        {input?.postImage || image ? (
           <div className="relative">
             <img
               src={image ? URL.createObjectURL(image) : input?.postImage}
-              className="w-full h-auto rounded-md"
-              alt={ image?.name.split(".")[0]}
+              className="w-full h-1/2 rounded-md"
+              alt={image?.name.split(".")[0]}
             />
             <button
               type="button"
@@ -133,13 +133,13 @@ export const PostModal = ({ post, setShowNewPostModal, setShowOptions }) => {
                   : setImage(null)
               }
             >
-           <CloseRoundedIcon className="rounded-full bg-darkSecondary"/>
+              <CloseRoundedIcon className="rounded-full bg-darkSecondary" />
             </button>
           </div>
-        ) : null} */}
+        ) : null}
 
         <div className="flex justify-between gap-2">
-          {/* <label className="cursor-pointer text-lg">
+          <label className="cursor-pointer text-lg">
             <input
               type="file"
               accept="image/*"
@@ -152,8 +152,8 @@ export const PostModal = ({ post, setShowNewPostModal, setShowOptions }) => {
                 }
               }}
             />
-       <InsertPhotoIcon/>
-          </label> */}
+            <InsertPhotoIcon />
+          </label>
 
           <div className="flex gap-2">
             <button

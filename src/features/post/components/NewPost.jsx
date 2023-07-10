@@ -1,9 +1,7 @@
 import "../styles.css";
 import { useRef, useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-// import { UserAvatar } from "../../../components/UserAvatar";
-import { updateProfile, setLoading } from "../../user/userSlice";
-import { focusInput } from "../../../utils/focusInput";
+
 import { createPost } from "../postSlice";
 import InsertPhotoIcon from "@mui/icons-material/InsertPhoto";
 import toast from "react-hot-toast";
@@ -52,7 +50,6 @@ export const NewPost = () => {
       className="grid grid-cols-[2rem_1fr] gap-2 items-start bg-darkSecondary text-sm  border-b border-darkGrey px-4 py-3 cursor-text"
       onClick={(e) => {
         e.stopPropagation();
-        // focusInput(newPostRef);
       }}
     >
       <UserProfile user={currentUser} />
@@ -67,7 +64,7 @@ export const NewPost = () => {
           onInput={(e) => setInput(e.currentTarget.textContent)}
         />
 
-        {/* {image ? (
+        {image ? (
           <div className="relative">
             <img
               src={URL.createObjectURL(image)}
@@ -82,10 +79,10 @@ export const NewPost = () => {
               <CloseRoundedIcon className="rounded-full bg-darkSecondary" />
             </button>
           </div>
-        ) : null} */}
+        ) : null}
 
         <div className="ml-auto flex items-center gap-4">
-          {/* <label className="cursor-pointer text-lg">
+          <label className="cursor-pointer text-lg">
             <input
               type="file"
               accept="image/*"
@@ -97,7 +94,7 @@ export const NewPost = () => {
               }
             />
             <InsertPhotoIcon />
-          </label> */}
+          </label>
 
           <button
             type="submit"

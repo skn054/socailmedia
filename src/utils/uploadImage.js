@@ -1,5 +1,5 @@
-const CLOUDINARY_URL = "https://api.cloudinary.com/v1_1/dwebygldw/image/upload";
-const CLOUDINARY_UPLOAD_PRESET = "ru8cort4";
+const CLOUDINARY_URL = "https://api.cloudinary.com/v1_1/dsbdynrz3/image/upload";
+const CLOUDINARY_UPLOAD_PRESET = "r1gieeqc";
 
 export const uploadImage = (image) => {
   const file = image;
@@ -7,7 +7,7 @@ export const uploadImage = (image) => {
 
   formData.append("file", file);
   formData.append("upload_preset", CLOUDINARY_UPLOAD_PRESET);
-  formData.append("folder", "sapphire");
+  formData.append("folder", "twitter");
 
   return fetch(CLOUDINARY_URL, {
     method: "POST",

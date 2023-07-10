@@ -213,7 +213,9 @@ export const SinglePost = () => {
                     <ModeCommentOutlinedIcon />
                   </button>
                   {currentPost?.comments?.length > 0 && (
-                    <span className="ml-1">{currentPost?.comments?.length}</span>
+                    <span className="ml-1">
+                      {currentPost?.comments?.length}
+                    </span>
                   )}
                 </div>
 

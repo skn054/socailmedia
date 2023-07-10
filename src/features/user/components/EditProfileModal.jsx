@@ -1,18 +1,16 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-// import { UserAvatar } from "../../../components/UserAvatar";
+
 import { updateProfile, setLoading } from "../userSlice";
 import toast from "react-hot-toast";
 import CameraAltIcon from "@mui/icons-material/CameraAlt";
 
 import CloseOutlinedIcon from "@mui/icons-material/CloseOutlined";
 import UserProfile from "../../../Components/UserProfile";
-// const CLOUDINARY_URL = "https://api.cloudinary.com/v1_1/dsbdynrz3/image/upload";
 
 const CLOUDINARY_URL = "https://api.cloudinary.com/v1_1/dsbdynrz3/image/upload";
-// const CLOUDINARY_UPLOAD_PRESET = "ru8cort4";
+
 const CLOUDINARY_UPLOAD_PRESET = "r1gieeqc";
-// r1gieeqc
 
 export const EditProfileModal = ({ setEditModal }) => {
   const { token, user } = useSelector((state) => state.auth);

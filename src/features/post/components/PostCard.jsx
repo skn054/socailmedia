@@ -1,12 +1,9 @@
 import { useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-// import { UserAvatar } from "../../../components/UserAvatar";
 
 import { addBookmark, removeBookmark } from "../../user/userSlice";
-// import { useClickOutside } from "../../../customHooks/useClickOutside";
 
-// import { CommentModal } from "../components/CommentModal";
 import { dislikePost, likePost } from "../postSlice";
 import { PostOptionsModal } from "./PostOptionsModal";
 import { getPostDate } from "../../../utils/getPostDate";
@@ -29,7 +26,6 @@ export const PostCard = ({ post }) => {
   const postRef = useRef();
 
   const [showOptions, setShowOptions] = useState(false);
-  // const [showCommentModal, setShowCommentModal] = useState(false);
 
   const currentPost = posts?.find((dbPost) => dbPost._id === post._id);
   const { _id, username, fullName, content, postImage, id, likes, createdAt } =
@@ -38,8 +34,6 @@ export const PostCard = ({ post }) => {
   const currentUser = users?.find(
     (dbUser) => dbUser.username === post.username
   );
-
-  // useClickOutside(postRef, setShowOptions);
 
   return (
     <div
@@ -53,7 +47,6 @@ export const PostCard = ({ post }) => {
           navigate(`/profile/${username}`);
         }}
       >
-        {/* <UserAvatar user={currentUser} /> */}
         <UserProfile user={currentUser} />
       </div>
 
@@ -130,13 +123,7 @@ export const PostCard = ({ post }) => {
           </div>
 
           <div>
-            <button
-              className="cursor-pointer hover:bg-dark hover:rounded-full"
-              // onClick={(e) => {
-              //   e.stopPropagation();
-              //   setShowCommentModal(true);
-              // }}
-            >
+            <button className="cursor-pointer hover:bg-dark hover:rounded-full">
               <ModeCommentOutlinedIcon className="w-1 h-1" />
             </button>
 
@@ -162,19 +149,6 @@ export const PostCard = ({ post }) => {
           </button>
         </div>
       </div>
-
-      {/* {showCommentModal ? (
-        <div
-          className="bg-[#00000080] top-0 left-0 fixed w-full h-full z-30 flex justify-center items-center cursor-default"
-          onClick={(e) => e.stopPropagation()}
-        >
-          <CommentModal
-        
-            setShowCommentModal={setShowCommentModal}
-            postId={currentPost?._id}
-          />
-        </div>
-      ) : null} */}
     </div>
   );
 };
