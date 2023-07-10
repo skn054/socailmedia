@@ -8,17 +8,17 @@ const getSinglePostService = (postId) => {
   return axios.get(`/api/posts/${postId}`);
 };
 
-const createPostService = ({ input,postImage, token, user }) => {
+const createPostService = ({ input, postImage, token, user }) => {
   return axios.post(
     "/api/posts",
-    { postData: { content: input,postImage, fullName: user.fullName } },
+    { postData: { content: input, postImage, fullName: user.fullName } },
     {
       headers: { authorization: token },
     }
   );
 };
 
-const editPostService = ({ token, postImage,  post, input }) => {
+const editPostService = ({ token, postImage, post, input }) => {
   return axios.post(
     `/api/posts/edit/${post._id}`,
     { postData: { content: input, postImage } },
@@ -27,7 +27,6 @@ const editPostService = ({ token, postImage,  post, input }) => {
     }
   );
 };
-
 
 const deletePostService = ({ _id, token }) => {
   return axios.delete(`/api/posts/${_id}`, {
@@ -55,38 +54,6 @@ const dislikePostService = ({ _id, token }) => {
   );
 };
 
-const addCommentService = ({ postId, commentData, token }) => {
-  console.log("add comm service");
-  return axios.post(
-    `/api/comments/add/${postId}`,
-    { commentData },
-    {
-      headers: { authorization: token },
-
-    }
-  );
-};
-
-const editCommentService = ({ token, commentData, postId, commentId }) => {
-  return axios.post(
-    `/api/comments/edit/${postId}/${commentId}`,
-    { commentData },
-    {
-      headers: { authorization: token },
-    }
-  );
-};
-
-const deleteCommentService = ({ token, postId, commentId }) => {
-  return axios.post(
-    `/api/comments/delete/${postId}/${commentId}`,
-    {},
-    {
-      headers: { authorization: token },
-    }
-  );
-};
-
 export {
   getAllPostsService,
   getSinglePostService,
@@ -95,7 +62,4 @@ export {
   deletePostService,
   likePostService,
   dislikePostService,
-  addCommentService,
-  editCommentService,
-  deleteCommentService,
 };
