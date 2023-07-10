@@ -1,8 +1,7 @@
 import "./styles.css";
 import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-// import { Loader } from "../../../components/Loader";
-// import { UserAvatar } from "../../../components/UserAvatar";
+
 import { logoutHandler } from "../../auth/authSlice";
 import { followUser, unfollowUser } from "../userSlice";
 import { EditProfileModal } from "./EditProfileModal";
