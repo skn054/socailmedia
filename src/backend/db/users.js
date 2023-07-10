@@ -16,14 +16,7 @@ export const users = [
     profileAvatar: "https://picsum.photos/id/37/2000/1333",
     createdAt: formatDate(),
     updatedAt: formatDate(),
-    following: [
-      {
-        _id: uuid(),
-        fullName: "Kiran",
-        username: "kiran123",
-        profileAvatar: "https://picsum.photos/id/43/1280/831",
-      },
-    ],
+    following: [],
     followers: [
       {
         _id: uuid(),

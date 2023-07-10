@@ -111,8 +111,8 @@ const Login = () => {
                   setLogin({
                     ...login,
                     input: {
-                      username: "kiran123",
-                      password: "123kiran",
+                      username: "chandraa",
+                      password: "123",
                     },
                   })
                 }
