@@ -7,7 +7,6 @@ import {
   dislikePost,
   getSinglePost,
   resetSinglePost,
-  addComment,
 } from "../postSlice";
 import { addBookmark, removeBookmark, getAllUsers } from "../../user/userSlice";
 import { postInBookmarks } from "../../../utils/postInBookmarks";
@@ -15,14 +14,8 @@ import { likedByLoggedUser } from "../../../utils/likedByLoggedUser";
 import { getPostDate } from "../../../utils/getPostDate";
 import { focusInput } from "../../../utils/focusInput";
 import { CommentCard } from "./CommentCard";
-// import { useClickOutside } from "../../../customHooks/useClickOutside";
-// import {Sidebar} from "../../../components/Sidebar"
-// import { Loader } from "../../../components/Loader";
-// import { UserAvatar } from "../../../components/UserAvatar";
 import { PostOptionsModal } from "./PostOptionsModal";
 
-// import { SearchBar } from "../../../components/SearchBar";
-// import {SuggestedUsers} from "../../../components/SuggestedUsers"
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import FavoriteIcon from "@mui/icons-material/Favorite";
@@ -30,7 +23,7 @@ import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import ModeCommentOutlinedIcon from "@mui/icons-material/ModeCommentOutlined";
 import BookmarkBorderOutlinedIcon from "@mui/icons-material/BookmarkBorderOutlined";
 import BookmarkOutlinedIcon from "@mui/icons-material/BookmarkOutlined";
-// import { Helmet } from "react-helmet";
+
 import UserProfile from "../../../Components/UserProfile";
 import SideBar from "../../../Components/SideBar";
 import SuggestedUsers from "../../../Components/SuggestedUsers";
@@ -69,15 +62,6 @@ export const SinglePost = () => {
   const loggedInUser = users.find(
     (dbUser) => dbUser.username === user.username
   );
-
-  // useEffect(() => {
-  //   dispatch(getSinglePost(postId));
-  //   dispatch(getAllUsers());
-
-  //   return () => dispatch(resetSinglePost());
-  // }, [posts, postId, dispatch]);
-
-  // useClickOutside(postRef, setShowOptions);
 
   return (
     <div className="grid sm:grid-cols-[5rem_1fr] lg:grid-cols-[15rem_1fr] xl:grid-cols-[13rem_1fr_18rem] w-[100%] lg:w-[80%] mb-16 sm:m-auto">
@@ -241,43 +225,6 @@ export const SinglePost = () => {
                 </div>
               </div>
 
-              {/* <div className="grid grid-cols-[2rem_1fr] gap-2 pt-3 border-t border-darkGrey">
-                <UserProfile user={loggedInUser} />
-
-                <form
-                  className="flex justify-between"
-                  onSubmit={(e) => {
-                    e.preventDefault();
-                    dispatch(
-                      addComment({
-                        token,
-                        commentData: { comment },
-                        postId: currentPost._id,
-                      })
-                    );
-                    setComment("");
-                  }}
-                >
-                  <input
-                    type="text"
-                    required
-                    ref={newCommentRef}
-                    placeholder="Post your reply"
-                    className="outline-none bg-inherit w-full"
-                    value={comment}
-                    onChange={(e) => setComment(e.target.value)}
-                  />
-
-                  <button
-                    className="bg-primary rounded-full py-1 px-3 ml-4 disabled:opacity-50 disabled:cursor-not-allowed w-[5.2rem]"
-                    disabled={!comment.trim()}
-                    type="submit"
-                  >
-                    Reply
-                  </button>
-                </form>
-              </div> */}
-
               {currentPost?.comments?.length > 0
                 ? [...currentPost?.comments]
                     ?.reverse()
@@ -295,7 +242,6 @@ export const SinglePost = () => {
       </div>
 
       <div className="hidden xl:block">
-        {/* <SearchBar /> */}
         <SuggestedUsers />
       </div>
     </div>
