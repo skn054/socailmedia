@@ -2,13 +2,8 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getPosts } from "../features/post/postSlice";
 import { getAllUsers } from "../features/user/userSlice";
-import { sortByDate, sortPosts } from "../utils/sortPosts";
-// import { SortBar } from "./SortBar";
-// import { Loader } from "./Loader";
-// import { SuggestedUsers } from "../components/SuggestedUsers";
+import { sortPosts } from "../utils/sortPosts";
 
-// import { SearchBar } from "../components/SearchBar";
-// import { NewPost } from "../features/post/components/NewPost";
 import { PostCard } from "../features/post/components/PostCard";
 import SideBar from "./SideBar";
 import SuggestedUsers from "./SuggestedUsers";
@@ -42,8 +37,6 @@ const Home = ({ title }) => {
     (post) => post?.username === loggedInUser?.username
   );
 
-  // const sortedPosts = sortByDate(timelinePosts, activeSort);
-
   let timeline;
   switch (title) {
     case "Home":
@@ -66,7 +59,7 @@ const Home = ({ title }) => {
           <h1 className="m-auto font-extrabold text-center text-grey block sm:hidden">
             {title}
           </h1>
-          <div className="block xl:hidden">{/* <SearchBar /> */}</div>
+          <div className="block xl:hidden"></div>
         </div>
 
         <div>
@@ -87,7 +80,6 @@ const Home = ({ title }) => {
       </div>
 
       <div className="hidden xl:block">
-        {/* <SearchBar /> */}
         <SuggestedUsers />
       </div>
     </div>
