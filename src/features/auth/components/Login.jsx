@@ -2,8 +2,7 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { loginHandler } from "../authSlice";
-// import { Loader } from "../../../components/Loader";
-import RestaurantMenuIcon from "@mui/icons-material/RestaurantMenu";
+
 import TwitterIcon from "@mui/icons-material/Twitter";
 const Login = () => {
   const dispatch = useDispatch();
@@ -36,7 +35,6 @@ const Login = () => {
         <div className="w-80 bg-darkSecondary m-auto p-4 rounded-lg border-light border shadow-darkSecondary shadow-xl">
           <div className="p-4">
             <div className=" flex items-center mx-auto justify-center ">
-              {/* <RestaurantMenuIcon className="h-6 w-6 mr-2 text-primary " /> */}
               <TwitterIcon color="primary" className="h-6 w-6 mr-2" />
               <h1 className="font-extrabold text-center text-grey">Twitter</h1>
             </div>
@@ -113,7 +111,7 @@ const Login = () => {
                   setLogin({
                     ...login,
                     input: {
-                      username: "pareshaaaaan",
+                      username: "chandraa",
                       password: "123",
                     },
                   })
