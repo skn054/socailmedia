@@ -14,17 +14,6 @@ function App() {
   return (
     <div className="flex flex-col min-h-screen">
       <Routes>
-        {/* <Route element={<PrivateRoute />}>
-        <Route path="*" element={<Navigate to="/" replace />} />
-          <Route path="/" element={<Home />} />
-          <Route path="/explore" element={<Explore />} />
-          <Route path="/post/:postId" element={<SinglePost />} />
-
-
-          <Route path="/bookmarks" element={<Bookmark />} />
-          <Route path="/profile/:username" element={<UserProfile />} />
-        </Route> */}
-
         <Route
           path="/"
           element={
