@@ -8,12 +8,7 @@ import {
   deletePostService,
   likePostService,
   dislikePostService,
-  addCommentService,
-  editCommentService,
-  deleteCommentService,
 } from "../../services/postServices";
-
-
 
 export const getPosts = createAsyncThunk(
   "post/getPosts",
@@ -126,51 +121,6 @@ export const dislikePost = createAsyncThunk(
   }
 );
 
-export const addComment = createAsyncThunk(
-  "post/addComment",
-  async (arg, { rejectWithValue }) => {
-    try {
-      const { data, status } = await addCommentService(arg);
-
-      if (status === 201) {
-        return data.posts;
-      }
-    } catch {
-      return rejectWithValue([], "Error occured. Try again later.");
-    }
-  }
-);
-
-export const editComment = createAsyncThunk(
-  "post/editComment",
-  async (arg, { rejectWithValue }) => {
-    try {
-      const { data, status } = await editCommentService(arg);
-
-      if (status === 201) {
-        return data.posts;
-      }
-    } catch {
-      return rejectWithValue([], "Error occured. Try again later.");
-    }
-  }
-);
-
-export const deleteComment = createAsyncThunk(
-  "post/deleteComment",
-  async (arg, { rejectWithValue }) => {
-    try {
-      const { data, status } = await deleteCommentService(arg);
-
-      if (status === 201) {
-        return data.posts;
-      }
-    } catch {
-      return rejectWithValue([], "Error occured. Try again later.");
-    }
-  }
-);
-
 export const postSlice = createSlice({
   name: "post",
   initialState: {
@@ -255,16 +205,6 @@ export const postSlice = createSlice({
     },
     [dislikePost.rejected]: (state, { payload }) => {
       state.error = payload;
-    },
-
-    [addComment.fulfilled]: (state, { payload }) => {
-      state.posts = payload;
-    },
-    [editComment.fulfilled]: (state, { payload }) => {
-      state.posts = payload;
-    },
-    [deleteComment.fulfilled]: (state, { payload }) => {
-      state.posts = payload;
     },
   },
 });
