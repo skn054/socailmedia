@@ -9,7 +9,6 @@
 - Add/Remove bookmark a post
 - Create/Edit posts
 - Delete your own posts
-- Share post link
 - Sort posts based on latest/trending
 
 ### Explore Page
@@ -36,14 +35,11 @@
 - Authentication
   - Login
   - Signup
-- Search users
-- Toasts
-- Responsive
 
 ## Built with -
 
 - React JS
-- React Context API + useReducer
+- Redux Toolkit
 - React Router v6
 - Tailwind CSS
 - Material UI icons
