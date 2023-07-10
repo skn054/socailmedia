@@ -9,8 +9,7 @@ import { formatDate } from "../utils/authUtils";
 export const posts = [
   {
     _id: uuid(),
-    content:
-      "Must try of this week: Vada Pao from SK Vadewale in Pune. The taste is absolutely mind-boggling and fresh.",
+    content: "Enjoying breakfast at Taj Krishna, Hyderabad",
     likes: {
       likeCount: 0,
       likedBy: [],
@@ -19,7 +18,7 @@ export const posts = [
     username: "akhil",
     fullName: "Akhil",
     postImage:
-      "https://res.cloudinary.com/dwebygldw/image/upload/v1653066367/frittr/vada-pav_g0u58t.webp",
+      "https://res.cloudinary.com/dsbdynrz3/image/upload/v1688962159/cld-sample-4.jpg",
     createdAt: "2022-05-01",
     updatedAt: formatDate(),
     comments: [
@@ -54,8 +53,7 @@ export const posts = [
   },
   {
     _id: uuid(),
-    content:
-      "Went to this hangout place, Bob's in Marathalli yesterday. The ambience is real good and the mocktails are really fresh.",
+    content: "Bought shoes at a great discount during myntra's sale",
     likes: {
       likeCount: 0,
       likedBy: [],
@@ -66,7 +64,7 @@ export const posts = [
     fullName: "Chandra",
     createdAt: "2022-05-11",
     postImage:
-      "https://res.cloudinary.com/dwebygldw/image/upload/v1652908952/frittr/zwpmppawiyxwthsmikyk.webp",
+      "https://res.cloudinary.com/dsbdynrz3/image/upload/v1688962152/samples/shoe.jpg",
     updatedAt: formatDate(),
     comments: [
       {
@@ -99,8 +97,7 @@ export const posts = [
   },
   {
     _id: uuid(),
-    content:
-      "Ordered Meghana's Special Chicken Biryani from Meghana's. Recommend 10/10. ✨  ",
+    content: "Ordered Special Mutton Biryani from Paradise. Taste's great",
     likes: {
       likeCount: 2,
       likedBy: [
@@ -121,7 +118,8 @@ export const posts = [
     },
     username: "prasad",
     fullName: "Prasad",
-    postImage: null,
+    postImage:
+      "https://res.cloudinary.com/dsbdynrz3/image/upload/v1688986001/MuttonBiryani_y0p2i9.webp",
     comments: [
       {
         _id: uuid(),
@@ -155,8 +153,7 @@ export const posts = [
   },
   {
     _id: uuid(),
-    content:
-      "Went out for dinner at Chili's Hyderabad. The taste reminds me of back home in Autralia.",
+    content: "Went on a run for 4km, feeling refreshed",
     likes: {
       likeCount: 0,
       likedBy: [],
@@ -198,14 +195,14 @@ export const posts = [
   },
   {
     _id: uuid(),
-    content:
-      "Went out for dinner at Chili's Hyderabad. The taste reminds me of back home in Autralia.",
+    content: "Enrolled in JavaScript course on udemy. ",
     likes: {
       likeCount: 0,
       likedBy: [],
       dislikedBy: [],
     },
-    postImage: null,
+    postImage:
+      "https://res.cloudinary.com/dsbdynrz3/image/upload/v1688985136/twitter/ey1e7mkctogettvoqxkt.png",
     username: "kiran123",
     fullName: "Kiran",
     createdAt: "2022-05-11",
@@ -241,8 +238,7 @@ export const posts = [
   },
   {
     _id: uuid(),
-    content:
-      "Nairobi is such a great city with so many people going about their business. One thing that you need to know while there are the places where to find great food/meals. Best recommendation is @al_yusra Restaurant located along Banda Street just next to Nation Centre. #Kenya",
+    content: "Started learning React.",
     likes: {
       likeCount: 0,
       likedBy: [],
@@ -252,7 +248,7 @@ export const posts = [
     fullName: "Kiran",
     createdAt: "2022-05-09",
     postImage:
-      "https://res.cloudinary.com/dwebygldw/image/upload/v1653066477/frittr/E-HqxXdWUAM0z-U_a44utb.jpg",
+      "https://res.cloudinary.com/dsbdynrz3/image/upload/v1688978772/twitter/cq9sqifbhaq684fpwaxo.png",
     updatedAt: formatDate(),
     comments: [
       {
@@ -285,8 +281,7 @@ export const posts = [
   },
   {
     _id: uuid(),
-    content:
-      "I met this street food seller in Gyeongju on a recommendation from a dating app. This man was adopted and grew up in US. He moved to Korea to find his birth mother. And he did! I often think back to our conversation #MondayMotivation",
+    content: "Work from Office starts tomorrow",
     likes: {
       likeCount: 0,
       likedBy: [],
@@ -295,7 +290,7 @@ export const posts = [
     username: "kiran123",
     fullName: "Kiran",
     postImage:
-      "https://res.cloudinary.com/dwebygldw/image/upload/v1653067279/frittr/E7OX3WgXoAEu0gR_z9x7zu.jpg",
+      "https://res.cloudinary.com/dsbdynrz3/image/upload/v1688962137/samples/ecommerce/leather-bag-gray.jpg",
     createdAt: "2022-05-01",
     updatedAt: formatDate(),
     comments: [
@@ -314,7 +309,7 @@ export const posts = [
       },
       {
         _id: uuid(),
-        comment: "Wow!",
+        comment: "All the Best!",
         fullName: "Chandra",
         username: "chandraa",
         profileAvatar: "https://picsum.photos/id/37/2000/1333",
