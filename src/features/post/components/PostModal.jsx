@@ -1,13 +1,11 @@
 import "../styles.css";
 import { useRef, useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-// import { UserAvatar } from "../../../components/UserAvatar";
-// import { createPost, editPost } from "../postSlice";
-// import { focusInput } from "../../../utils/focusInput";
+
 import { uploadImage } from "../../../utils/uploadImage";
 import toast from "react-hot-toast";
 import CloseRoundedIcon from "@mui/icons-material/CloseRounded";
-// import { useClickOutside } from "../../../customHooks/useClickOutside";
+
 import InsertPhotoIcon from "@mui/icons-material/InsertPhoto";
 import { createPost, editPost } from "../postSlice";
 import UserProfile from "../../../Components/UserProfile";
@@ -89,14 +87,11 @@ export const PostModal = ({ post, setShowNewPostModal, setShowOptions }) => {
     if (post) newPostRef.current.innerText = post.content;
   }, [post]);
 
-  // useClickOutside(modalRef, setShowNewPostModal);
-
   return (
     <div
       className="grid grid-cols-[2rem_1fr] gap-2 items-start bg-darkSecondary text-sm  border-darkGrey px-4 py-3 cursor-text w-[90%] sm:w-1/2 shadow-dark shadow-lg rounded border"
       onClick={(e) => {
         e.stopPropagation();
-        // focusInput(newPostRef);
       }}
       ref={modalRef}
     >
