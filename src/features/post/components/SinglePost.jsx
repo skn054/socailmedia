@@ -1,14 +1,9 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useRef } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 
-import {
-  likePost,
-  dislikePost,
-  getSinglePost,
-  resetSinglePost,
-} from "../postSlice";
-import { addBookmark, removeBookmark, getAllUsers } from "../../user/userSlice";
+import { likePost, dislikePost } from "../postSlice";
+import { addBookmark, removeBookmark } from "../../user/userSlice";
 import { postInBookmarks } from "../../../utils/postInBookmarks";
 import { likedByLoggedUser } from "../../../utils/likedByLoggedUser";
 import { getPostDate } from "../../../utils/getPostDate";
@@ -45,8 +40,7 @@ export const SinglePost = () => {
   const dispatch = useDispatch();
 
   const [showOptions, setShowOptions] = useState(false);
-  const [comment, setComment] = useState("");
-  const [showLikesModal, setShowLikesModal] = useState(false);
+  // const [comment, setComment] = useState("");
 
   const currentPost = posts.find(
     (post) => post.id.toString() === postId.toString()
@@ -148,10 +142,7 @@ export const SinglePost = () => {
               </div>
               <div className="border-t border-darkGrey text-left pt-2 mt-2 ">
                 {currentPost?.likes.likeCount > 0 ? (
-                  <button
-                    className="cursor-pointer hover:underline mx-1"
-                    onClick={() => setShowLikesModal(true)}
-                  >
+                  <button className="cursor-pointer hover:underline mx-1">
                     <span className="text-bold">
                       {currentPost?.likes.likeCount}
                     </span>{" "}
