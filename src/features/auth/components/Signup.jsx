@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { signUpHandler } from "../authSlice";
-// import { Loader } from "../../../components/Loader";
+
 import RestaurantMenuIcon from "@mui/icons-material/RestaurantMenu";
 
 const Signup = () => {
