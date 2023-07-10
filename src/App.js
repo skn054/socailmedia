@@ -9,10 +9,20 @@ import Home from "./Components/Home";
 import BookMarks from "./Components/BookMarks";
 import { SinglePost } from "./features/post/components/SinglePost";
 import ProfileDetails from "./Components/ProfileDetails";
+import { Toaster } from "react-hot-toast";
 
 function App() {
   return (
     <div className="flex flex-col min-h-screen">
+      <Toaster
+        position="bottom-left"
+        reverseOrder={false}
+        containerStyle={{
+          bottom: "4rem",
+          right: "1rem",
+          fontSize: "0.9rem",
+        }}
+      />
       <Routes>
         <Route
           path="/"
